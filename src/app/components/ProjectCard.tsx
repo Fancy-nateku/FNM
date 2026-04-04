@@ -51,7 +51,7 @@ export function ProjectCard({
         </p>
 
         {/* Technology Tags */}
-        <div className="mb-6 flex flex-wrap gap-2">
+        <div className="mb-8 flex flex-wrap gap-2">
           {technologies.map((tech) => (
             <span
               key={tech}
@@ -63,7 +63,7 @@ export function ProjectCard({
         </div>
 
         {/* Links */}
-        <div className="mt-4 flex items-center gap-6 border-t border-coffee-light/20 pt-4">
+        <div className="mt-auto flex items-center gap-6 border-t border-coffee-light/20 pt-6">
           {githubUrl && (
             <a
               href={isGithubPlaceholder ? undefined : githubUrl}
