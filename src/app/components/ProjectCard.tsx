@@ -50,21 +50,6 @@ export function ProjectCard({
           {description}
         </p>
 
-        {/* Features (if any) */}
-        {features && features.length > 0 && (
-          <div className="mb-6 space-y-2">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#6F4E37]/60">Key Features</h4>
-            <ul className="grid grid-cols-1 gap-x-4 gap-y-1 text-xs text-muted-foreground">
-              {features.map((feature, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#6F4E37]/40" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
         {/* Technology Tags */}
         <div className="mb-8 flex flex-wrap gap-2">
           {technologies.map((tech) => (
