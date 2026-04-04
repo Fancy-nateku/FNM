@@ -21,41 +21,36 @@ export function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div
-      className="rounded-2xl overflow-hidden flex flex-col"
-      style={{ backgroundColor: "#1e2235" }}
+      className="group flex flex-col overflow-hidden rounded-lg border border-coffee-light bg-sand transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-eggplant/30"
     >
       {/* Project Image */}
-      <div className="h-56 overflow-hidden relative flex-shrink-0">
+      <div className="aspect-video overflow-hidden relative flex-shrink-0">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-eggplant/15 to-transparent" />
       </div>
 
       {/* Project Content */}
-      <div className="p-6 flex flex-col flex-1">
+      <div className="flex flex-1 flex-col p-6">
         {/* Title */}
-        <h3 className="text-white mb-3" style={{ fontSize: "1.25rem", fontWeight: 700 }}>
+        <h3 className="mb-2 text-xl font-bold text-foreground">
           {title}
         </h3>
 
         {/* Description */}
-        <p className="mb-5 leading-relaxed flex-1" style={{ color: "#9ca3af", fontSize: "0.95rem" }}>
+        <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
           {description}
         </p>
 
         {/* Technology Tags */}
-        <div className="flex flex-wrap gap-2 mb-5">
+        <div className="mb-6 flex flex-wrap gap-2">
           {technologies.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 rounded-full text-xs"
-              style={{
-                border: "1px solid #4b5563",
-                color: "#d1d5db",
-                backgroundColor: "transparent",
-              }}
+              className="rounded-sm border border-coffee-light bg-coffee/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-coffee-dark"
             >
               {tech}
             </span>
@@ -63,19 +58,16 @@ export function ProjectCard({
         </div>
 
         {/* Links */}
-        <div className="flex items-center gap-5">
+        <div className="mt-auto flex items-center gap-4">
           {githubUrl && (
             <a
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 transition-colors"
-              style={{ color: "#9ca3af" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#9ca3af")}
+              className="flex items-center gap-1.5 text-sm font-medium text-coffee-dark hover:text-eggplant"
             >
-              <Github size={17} />
-              <span style={{ fontSize: "0.9rem" }}>Code</span>
+              <Github size={16} />
+              <span>Code</span>
             </a>
           )}
           {liveUrl && (
@@ -83,13 +75,10 @@ export function ProjectCard({
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 transition-colors"
-              style={{ color: "#9ca3af" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#ffffff")}
+              className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-primary"
             >
-              <ExternalLink size={17} />
-              <span style={{ fontSize: "0.9rem" }}>Live</span>
+              <ExternalLink size={16} />
+              <span>Live</span>
             </a>
           )}
         </div>

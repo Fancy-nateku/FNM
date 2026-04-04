@@ -1,7 +1,18 @@
-/* Custom animations for the portfolio */
+/* Sophisticated Animations & Easing */
 
-/* Fade in animation for sections */
-@keyframes fadeInUp {
+:root {
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -12,18 +23,46 @@
   }
 }
 
-/* Apply subtle animation to main sections */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Staggered Timing Utilities */
+.animate-in {
+  animation: slideUp 0.6s var(--ease-out) both;
+}
+
+.stagger-1 { animation-delay: 100ms; }
+.stagger-2 { animation-delay: 200ms; }
+.stagger-3 { animation-delay: 300ms; }
+.stagger-4 { animation-delay: 400ms; }
+.stagger-5 { animation-delay: 500ms; }
+
+/* Subtle Hover States */
+.hover-lift {
+  transition: transform 0.2s var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(var(--lift-sm));
+}
+
+.hover-lift-md:hover {
+  transform: translateY(var(--lift-md));
+}
+
+/* Base element animations */
 section {
-  animation: fadeInUp 0.6s ease-out;
+  animation: fadeIn 0.8s var(--ease-out) both;
 }
 
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom focus styles for accessibility */
-*:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
+main {
+  animation: fadeIn 0.4s var(--ease-out) both;
 }

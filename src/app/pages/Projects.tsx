@@ -83,22 +83,22 @@ const additionalProjects = [
 
 export function Projects() {
   return (
-    <div className="py-20" style={{ backgroundColor: "#13172a", minHeight: "100vh" }}>
+    <div className="py-24 bg-background min-h-[100vh]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            My Projects
+        <div className="text-center mb-16 animate-in stagger-1">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Systems Architecture
           </h1>
-          <p className="text-lg max-w-3xl mx-auto" style={{ color: "#9ca3af" }}>
-            A collection of financial systems, admin dashboards, and web applications built with modern technologies. Each project demonstrates full-stack development capabilities and real-world problem-solving.
+          <p className="text-lg max-w-3xl mx-auto text-muted-foreground">
+            A selection of high-integrity financial systems, administrative platforms, and structural web applications. Each deployment demonstrates end-to-end full-stack capabilities and deliberate problem-solving.
           </p>
         </div>
 
         {/* Featured Projects */}
-        <div className="mb-20">
-          <h2 className="text-2xl font-bold text-white mb-8">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mb-24 animate-in stagger-2">
+          <h2 className="text-2xl font-bold text-foreground mb-8">Featured Deployments</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project) => (
               <ProjectCard key={project.title} {...project} size="large" />
             ))}
@@ -106,9 +106,9 @@ export function Projects() {
         </div>
 
         {/* Additional Projects */}
-        <div>
-          <h2 className="text-2xl font-bold text-white mb-8">Additional Projects</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+        <div className="animate-in stagger-3">
+          <h2 className="text-2xl font-bold text-foreground mb-8">Structural Interfaces</h2>
+          <div className="grid md:grid-cols-2 gap-8">
             {additionalProjects.map((project) => (
               <ProjectCard key={project.title} {...project} size="small" />
             ))}
