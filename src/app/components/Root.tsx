@@ -44,7 +44,7 @@ export function Root() {
               to="/" 
               className="group flex items-center gap-3"
             >
-              <img src="/fnm-logo.png" alt="FNM Logo" className="h-10 w-auto object-contain drop-shadow-sm" />
+              <img src="/fnm-logo.png" alt="FNM Logo" className="h-10 w-10 rounded-full object-cover border border-[#6F4E37]/20 drop-shadow-sm" />
               <span className="text-[#6F4E37] font-bold text-xl tracking-wide">Fancy Nateku</span>
             </Link>
 
