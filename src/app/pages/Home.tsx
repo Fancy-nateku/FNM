@@ -15,51 +15,7 @@ import { SkillBadge } from "../components/SkillBadge";
 
 const developerPhoto = "/IMG-20260331-WA0079.jpg";
 
-const featuredProjects = [
-  {
-    title: "Agritrack — Smart Finance Management System",
-    description: "A comprehensive financial management platform designed specifically for farmers to track income, manage expenses, and generate detailed financial reports.",
-    technologies: ["React", "TypeScript", "Node.js", "MySQL", "Bootstrap"],
-    image: "/agritrack-hero.png",
-    liveUrl: "https://agri-track-two.vercel.app/",
-    features: ["Income tracking", "Expense management", "Financial dashboard", "Reporting interface"],
-  },
-  {
-    title: "Role-Based Financial Administration System",
-    description: "A multi-role financial administration platform with specialized interfaces for treasurers, auditors, and chair accounts management.",
-    technologies: ["React", "Node.js", "TypeScript", "MySQL", "Bootstrap"],
-    image: "https://images.unsplash.com/photo-1766171359875-73155eff7f66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhZG1pbiUyMGRhc2hib2FyZCUyMGNvbXB1dGVyJTIwc2NyZWVufGVufDF8fHx8MTc3NDczMTgwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-    githubUrl: "#",
-    features: ["Multi-role dashboards", "Treasurer interface", "Auditor tools", "Financial records handling"],
-  },
-  {
-    title: "KSUCUMC Management System",
-    description: "A comprehensive management system for handling user administration, structured dashboards, and data workflows for organizational operations.",
-    technologies: ["React", "Node.js", "MySQL", "Bootstrap"],
-    image: "/ksucu-hero.png",
-    githubUrl: "#",
-    liveUrl: "https://ksucu-mc.co.ke/",
-    features: ["User management", "Structured dashboards", "Data workflows", "Administrative operations"],
-  },
-];
-
-const additionalProjects = [
-  {
-    title: "Neon Tokyo Developer",
-    description: "A modern developer interface with sleek UI design and contemporary styling approaches.",
-    technologies: ["React", "Bootstrap", "CSS"],
-    image: "/neon-hero.png",
-    githubUrl: "#",
-    liveUrl: "https://fancy-nateku.github.io/plp-webtechnologies-classroom-july2025-july-2025-final-project-and-deployment-Final-Project-and-Depl/#",
-  },
-  {
-    title: "Itumbe Resort Website",
-    description: "A responsive business website showcasing resort services with modern design and layout.",
-    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    image: "/itumbe-hero.jpg",
-    githubUrl: "#",
-  },
-];
+import { featuredProjects, Project } from "../../data/projects";
 
 type Skill = {
   name: string;
@@ -178,7 +134,7 @@ export function Home() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((project, i) => (
+            {featuredProjects.map((project: Project, i: number) => (
               <div key={project.title} className={`animate-in stagger-${i + 1}`}>
                 <ProjectCard {...project} size="large" />
               </div>
