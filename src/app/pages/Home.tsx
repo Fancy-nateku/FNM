@@ -20,8 +20,8 @@ const featuredProjects = [
     title: "Agritrack — Smart Finance Management System",
     description: "A comprehensive financial management platform designed specifically for farmers to track income, manage expenses, and generate detailed financial reports.",
     technologies: ["React", "TypeScript", "Node.js", "MySQL", "Bootstrap"],
-    image: "https://images.unsplash.com/photo-1570894808314-677b57f25e45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBkYXNoYm9hcmQlMjBpbnRlcmZhY2UlMjBzY3JlZW58ZW58MXx8fHwxNzc0NzMxODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    githubUrl: "#",
+    image: "/agritrack-hero.png",
+    liveUrl: "https://agri-track-two.vercel.app/",
     features: ["Income tracking", "Expense management", "Financial dashboard", "Reporting interface"],
   },
   {
@@ -36,8 +36,9 @@ const featuredProjects = [
     title: "KSUCUMC Management System",
     description: "A comprehensive management system for handling user administration, structured dashboards, and data workflows for organizational operations.",
     technologies: ["React", "Node.js", "MySQL", "Bootstrap"],
-    image: "https://images.unsplash.com/photo-1771922748624-b205cf5d002d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5hZ2VtZW50JTIwc3lzdGVtJTIwaW50ZXJmYWNlJTIwbGFwdG9wfGVufDF8fHx8MTc3NDczMTgwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/ksucu-hero.png",
     githubUrl: "#",
+    liveUrl: "https://ksucu-mc.co.ke/",
     features: ["User management", "Structured dashboards", "Data workflows", "Administrative operations"],
   },
 ];
@@ -47,14 +48,15 @@ const additionalProjects = [
     title: "Neon Tokyo Developer",
     description: "A modern developer interface with sleek UI design and contemporary styling approaches.",
     technologies: ["React", "Bootstrap", "CSS"],
-    image: "https://images.unsplash.com/photo-1585085007341-a5aadf6e48e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW9uJTIwdG9reW8lMjBjaXR5c2NhcGUlMjBuaWdodHxlbnwxfHx8fDE3NzQ3MzE4MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/neon-hero.png",
     githubUrl: "#",
+    liveUrl: "https://fancy-nateku.github.io/plp-webtechnologies-classroom-july2025-july-2025-final-project-and-deployment-Final-Project-and-Depl/#",
   },
   {
     title: "Itumbe Resort Website",
     description: "A responsive business website showcasing resort services with modern design and layout.",
     technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    image: "https://images.unsplash.com/photo-1690199827629-552c41f6450f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjB0cm9waWNhbCUyMGFyY2hpdGVjdHVyZXxlbnwxfHx8fDE3NzQ3MzE4MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/itumbe-hero.jpg",
     githubUrl: "#",
   },
 ];
@@ -124,10 +126,10 @@ export function Home() {
                 Fancy Nateku Megiri
               </h1>
               <p className="mb-6 text-xl font-medium text-coffee-dark">
-                Full-Stack Engineer & Financial Systems Specialist
+                Full-Stack Developer | Software Engineer
               </p>
               <p className="mb-10 text-lg leading-relaxed text-muted-foreground">
-                Architecting robust financial infrastructures and intuitive administrative ecosystems. I specialize in building scalable web applications with a focus on precision, security, and performance.
+                Turning complex problems into software you can rely on.
               </p>
               
               {/* Action Buttons */}

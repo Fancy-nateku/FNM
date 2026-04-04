@@ -4,10 +4,10 @@ const featuredProjects = [
   {
     title: "Agritrack — Smart Finance Management System for Farmers",
     description: "A comprehensive financial management platform designed specifically for farmers. Agritrack enables agricultural businesses to track income streams, manage operational expenses, monitor financial health through interactive dashboards, and generate detailed financial reports for better decision-making.",
-    technologies: ["React", "TypeScript", "Node.js", "MySQL", "Bootstrap"],
-    image: "https://images.unsplash.com/photo-1570894808314-677b57f25e45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBkYXNoYm9hcmQlMjBpbnRlcmZhY2UlMjBzY3JlZW58ZW58MXx8fHwxNzc0NzMxODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    technologies: ["React", "TypeScript", "Node.js", "MySQL"],
+    image: "/agritrack-hero.png",
     githubUrl: "#",
-    liveUrl: "#",
+    liveUrl: "https://agri-track-two.vercel.app/",
     features: [
       "Income tracking with categorization",
       "Expense management and budgeting",
@@ -20,7 +20,7 @@ const featuredProjects = [
   {
     title: "Role-Based Financial Administration System",
     description: "A sophisticated multi-role financial administration platform built for organizational financial management. The system features specialized interfaces and permissions for different roles including treasurers, auditors, and administrative chairs. Each role has tailored tools and access levels for secure financial record management.",
-    technologies: ["React", "Node.js", "TypeScript", "MySQL", "Bootstrap"],
+    technologies: ["React", "Node.js", "TypeScript", "MySQL"],
     image: "https://images.unsplash.com/photo-1766171359875-73155eff7f66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhZG1pbiUyMGRhc2hib2FyZCUyMGNvbXB1dGVyJTIwc2NyZWVufGVufDF8fHx8MTc3NDczMTgwNHww&ixlib=rb-4.1.0&q=80&w=1080",
     githubUrl: "#",
     liveUrl: "#",
@@ -35,12 +35,12 @@ const featuredProjects = [
     ],
   },
   {
-    title: "KSUCUMC Management System",
-    description: "A comprehensive organizational management system developed for Kisii University Christian Union Methodist Church. The platform handles user administration, provides structured dashboards for different stakeholders, manages data workflows, and facilitates administrative operations efficiently.",
-    technologies: ["React", "Node.js", "MySQL", "Bootstrap"],
-    image: "https://images.unsplash.com/photo-1771922748624-b205cf5d002d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5hZ2VtZW50JTIwc3lzdGVtJTIwaW50ZXJmYWNlJTIwbGFwdG9wfGVufDF8fHx8MTc3NDczMTgwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+    title: "KSUCU-MC System",
+    description: "A comprehensive organizational management system developed for Kisii University Christian Union Main Campus. The platform handles user administration, provides structured dashboards for different stakeholders, manages data workflows, and facilitates administrative operations efficiently.",
+    technologies: ["React", "Node.js", "MySQL", "Docker"],
+    image: "/ksucu-hero.png",
     githubUrl: "#",
-    liveUrl: "#",
+    liveUrl: "https://ksucu-mc.co.ke/",
     features: [
       "User management with profile handling",
       "Structured dashboards for different roles",
@@ -57,8 +57,9 @@ const additionalProjects = [
     title: "Neon Tokyo Developer",
     description: "A modern developer interface project focused on contemporary UI design and sleek styling approaches. The project showcases advanced CSS techniques, modern design patterns, and responsive layouts inspired by cyberpunk aesthetics.",
     technologies: ["React", "Bootstrap", "CSS"],
-    image: "https://images.unsplash.com/photo-1585085007341-a5aadf6e48e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW9uJTIwdG9reW8lMjBjaXR5c2NhcGUlMjBuaWdodHxlbnwxfHx8fDE3NzQ3MzE4MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/neon-hero.png",
     githubUrl: "#",
+    liveUrl: "https://fancy-nateku.github.io/plp-webtechnologies-classroom-july2025-july-2025-final-project-and-deployment-Final-Project-and-Depl/#",
     features: [
       "Modern UI design with neon aesthetics",
       "Contemporary developer interface styling",
@@ -69,7 +70,7 @@ const additionalProjects = [
     title: "Itumbe Resort Website",
     description: "A professional business website designed for Itumbe Resort to showcase their services, amenities, and facilities. The website features a modern responsive layout, service presentation, and booking information to attract potential guests.",
     technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    image: "https://images.unsplash.com/photo-1690199827629-552c41f6450f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjB0cm9waWNhbCUyMGFyY2hpdGVjdHVyZXxlbnwxfHx8fDE3NzQ3MzE4MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/itumbe-hero.jpg",
     githubUrl: "#",
     liveUrl: "#",
     features: [
@@ -88,10 +89,10 @@ export function Projects() {
         {/* Header */}
         <div className="text-center mb-16 animate-in stagger-1">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Systems Architecture
+            Projects
           </h1>
           <p className="text-lg max-w-3xl mx-auto text-muted-foreground">
-            A selection of high-integrity financial systems, administrative platforms, and structural web applications. Each deployment demonstrates end-to-end full-stack capabilities and deliberate problem-solving.
+            Software built to handle real-world problems.
           </p>
         </div>
 

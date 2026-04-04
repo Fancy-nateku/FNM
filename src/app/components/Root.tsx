@@ -109,16 +109,16 @@ export function Root() {
       {/* Footer */}
       <footer className="border-t border-coffee-light/50 bg-sand/30 py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm font-medium text-muted-foreground tracking-wide">
-            <a href="https://github.com/Fancy-nateku" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-coffee-dark transition-colors">
-              <Github size={18} />
-              GitHub
+          <div className="flex flex-wrap items-center justify-center text-sm font-medium text-muted-foreground tracking-wide">
+            <a href="https://github.com/Fancy-nateku" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-coffee-dark transition-colors relative top-[1px]">
+              <Github size={16} />
+              <span>GitHub</span>
             </a>
             <span className="mx-3 opacity-50">·</span>
             <a href="mailto:fancymegir01@gmail.com" className="hover:text-coffee-dark transition-colors">fancymegir01@gmail.com</a>
             <span className="mx-3 opacity-50">·</span>
             <span>Kisii, Kenya</span>
-          </p>
+          </div>
         </div>
       </footer>
     </div>
