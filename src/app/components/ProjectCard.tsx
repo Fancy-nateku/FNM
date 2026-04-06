@@ -50,52 +50,55 @@ export function ProjectCard({
           {description}
         </p>
 
-        {/* Technology Tags */}
-        <div className="mb-8 flex flex-wrap gap-2">
-          {technologies.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-sm border border-coffee-light bg-coffee/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-coffee-dark"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+        {/* Bottom Content Area: Tech Tags + Links */}
+        <div className="mt-auto flex flex-col gap-6 border-t border-coffee-light/20 pt-6">
+          {/* Technology Tags */}
+          <div className="flex flex-wrap gap-2">
+            {technologies.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-sm border border-coffee-light bg-coffee/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-coffee-dark"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
 
-        {/* Links */}
-        <div className="mt-auto flex items-center gap-6 border-t border-coffee-light/20 pt-6">
-          {githubUrl && (
-            <a
-              href={isGithubPlaceholder ? undefined : githubUrl}
-              target={isGithubPlaceholder ? undefined : "_blank"}
-              rel="noopener noreferrer"
-              className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${
-                isGithubPlaceholder 
-                  ? "text-muted-foreground/40 cursor-not-allowed grayscale" 
-                  : "text-coffee-dark hover:text-eggplant"
-              }`}
-              title={isGithubPlaceholder ? "Repository coming soon" : "View Source Code"}
-            >
-              <Github size={16} />
-              <span>{isGithubPlaceholder ? "Private" : "Code"}</span>
-            </a>
-          )}
-          {liveUrl && (
-            <a
-              href={isLivePlaceholder ? undefined : liveUrl}
-              target={isLivePlaceholder ? undefined : "_blank"}
-              rel="noopener noreferrer"
-              className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${
-                isLivePlaceholder 
-                  ? "text-muted-foreground/40 cursor-not-allowed grayscale" 
-                  : "text-muted-foreground hover:text-primary"
-              }`}
-              title={isLivePlaceholder ? "Live demo coming soon" : "View Live Project"}
-            >
-              <ExternalLink size={16} />
-              <span>{isLivePlaceholder ? "Preview" : "Live"}</span>
-            </a>
-          )}
+          {/* Action Links */}
+          <div className="flex items-center gap-6">
+            {githubUrl && (
+              <a
+                href={isGithubPlaceholder ? undefined : githubUrl}
+                target={isGithubPlaceholder ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${
+                  isGithubPlaceholder 
+                    ? "text-muted-foreground/40 cursor-not-allowed grayscale" 
+                    : "text-coffee-dark hover:text-eggplant"
+                }`}
+                title={isGithubPlaceholder ? "Repository coming soon" : "View Source Code"}
+              >
+                <Github size={16} />
+                <span>{isGithubPlaceholder ? "Private" : "Code"}</span>
+              </a>
+            )}
+            {liveUrl && (
+              <a
+                href={isLivePlaceholder ? undefined : liveUrl}
+                target={isLivePlaceholder ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${
+                  isLivePlaceholder 
+                    ? "text-muted-foreground/40 cursor-not-allowed grayscale" 
+                    : "text-muted-foreground hover:text-primary"
+                }`}
+                title={isLivePlaceholder ? "Live demo coming soon" : "View Live Project"}
+              >
+                <ExternalLink size={16} />
+                <span>{isLivePlaceholder ? "Preview" : "Live"}</span>
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -8,10 +8,12 @@ export function Contact() {
     message: "",
   });
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: { name?: string; email?: string; message?: string } = {};
 
@@ -29,8 +31,50 @@ export function Contact() {
     }
 
     setErrors({});
-    alert("Thanks — I'll be in touch within 48 hours.");
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      
+      if (!ACCESS_KEY || ACCESS_KEY === "YOUR_ACCESS_KEY_HERE") {
+        console.error("Web3Forms Access Key is missing or invalid. Check your .env file.");
+        alert("The contact form is not configured correctly. Please check the access key.");
+        setIsSubmitting(false);
+        return;
+      }
+      
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Inquiry from ${formData.name}`,
+          from_name: "Portfolio Contact Form",
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setSubmitSuccess(false), 5000);
+      } else {
+        console.error("Submission failed:", result);
+        alert(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form error:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -129,11 +173,18 @@ export function Contact() {
 
               <button 
                 type="submit" 
-                className="w-full flex items-center justify-center gap-2 rounded-md bg-[#6F4E37] text-[#F5EFE6] px-8 py-4 text-base font-bold transition-all duration-300 hover:bg-[#8B5A2B] active:scale-[0.98]"
+                disabled={isSubmitting}
+                className="w-full flex items-center justify-center gap-2 rounded-md bg-[#6F4E37] text-[#F5EFE6] px-8 py-4 text-base font-bold transition-all duration-300 hover:bg-[#8B5A2B] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                <Send size={18} />
-                Send Inquiry
+                <Send size={18} className={isSubmitting ? "animate-pulse" : ""} />
+                {isSubmitting ? "Sending..." : "Send Inquiry"}
               </button>
+
+              {submitSuccess && (
+                <div className="p-4 bg-[#8B5A2B]/10 text-[#6F4E37] border border-[#6F4E37]/20 rounded-md text-sm font-bold animate-in fade-in slide-in-from-bottom-2">
+                  Message sent successfully! I'll be in touch soon.
+                </div>
+              )}
             </form>
           </div>
 

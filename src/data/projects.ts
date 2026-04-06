@@ -28,7 +28,7 @@ export const featuredProjects: Project[] = [
   {
     title: "Role-Based Financial Administration System",
     description: "A sophisticated multi-role financial administration platform built for organizational financial management. The system features specialized interfaces and permissions for different roles including treasurers, auditors, and administrative chairs. Each role has tailored tools and access levels for secure financial record management.",
-    technologies: ["React", "Node.js", "TypeScript", "MySQL", "Bootstrap"],
+    technologies: ["React", "Node.js", "TypeScript", "MySQL"],
     image: "https://images.unsplash.com/photo-1766171359875-73155eff7f66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhZG1pbiUyMGRhc2hib2FyZCUyMGNvbXB1dGVyJTIwc2NyZWVufGVufDF8fHx8MTc3NDczMTgwNHww&ixlib=rb-4.1.0&q=80&w=1080",
     githubUrl: "#",
     liveUrl: "#",
@@ -45,7 +45,7 @@ export const featuredProjects: Project[] = [
   {
     title: "KSUCU-MC Management System",
     description: "A comprehensive organizational management system developed for Kisii University Christian Union Main Campus. The platform handles user administration, provides structured dashboards for different stakeholders, manages data workflows, and facilitates administrative operations efficiently.",
-    technologies: ["React", "Node.js", "MySQL", "Bootstrap"],
+    technologies: ["TypeScript", "Node.js", "MySQL", "CSS"],
     image: "/ksucu-hero.png",
     githubUrl: "#",
     liveUrl: "https://ksucu-mc.co.ke/",
@@ -77,7 +77,7 @@ export const additionalProjects: Project[] = [
   {
     title: "Itumbe Resort Website",
     description: "A professional business website designed for Itumbe Resort to showcase their services, amenities, and facilities. The website features a modern responsive layout, service presentation, and booking information to attract potential guests.",
-    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    technologies: ["HTML", "CSS", "MySQL", "TypeScript"],
     image: "/itumbe-hero.jpg",
     githubUrl: "#",
     liveUrl: "#",
