@@ -10,13 +10,13 @@ export function About() {
         <div className="flex flex-col md:flex-row gap-12 items-center mb-24 animate-in stagger-1">
           {/* Photo */}
           <div className="flex-shrink-0">
-            <div className="relative group w-64 h-64">
+            <div className="relative group w-48 h-48 md:w-64 md:h-64">
               <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-eggplant to-coffee-light opacity-25 blur transition duration-500 group-hover:opacity-40" />
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-sand shadow-2xl">
                 <img
                   src={developerPhoto}
                   alt="Fancy Nateku Megiri"
-                  className="w-full h-full object-cover object-top grayscale transition duration-500 hover:grayscale-0"
+                  className="w-full h-full object-cover object-top transition duration-500 hover:scale-105"
                 />
               </div>
             </div>
