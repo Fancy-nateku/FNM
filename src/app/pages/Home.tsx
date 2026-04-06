@@ -16,55 +16,223 @@ export function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative flex min-h-[85vh] items-center py-20" style={{ background: 'transparent' }}>
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-16 md:grid-cols-2">
-            {/* Left Column - Text */}
-            <div className="animate-in stagger-1">
-              <h1 className="mb-4 text-5xl font-bold tracking-tight text-foreground md:text-6xl">
-                Fancy Nateku Megiri
-              </h1>
-              <p className="mb-6 text-xl font-medium text-coffee-dark">
-                Full-Stack Developer | Software Engineer
-              </p>
-              <p className="mb-10 text-lg leading-relaxed text-muted-foreground">
-                Turning complex problems into software you can rely on.
-              </p>
-              
-              {/* Action Buttons */}
-              <div className="flex flex-wrap gap-4">
-                <Button size="lg" asChild>
-                  <Link to="/projects">Explore Projects</Link>
-                </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <a href="https://github.com/Fancy-nateku" target="_blank" rel="noopener noreferrer" className="gap-2">
-                    <Github size={18} />
-                    GitHub
-                  </a>
-                </Button>
-                <Button variant="ghost" size="lg" className="gap-2">
-                  <Download size={18} />
-                  Resume
-                </Button>
-              </div>
+      <section
+        id="hero"
+        style={{
+          background: '#F3EFEA',
+          height: 'calc(100vh - 64px)',
+          display: 'flex',
+          alignItems: 'center',
+          overflow: 'hidden',
+          padding: '48px 64px',
+          boxSizing: 'border-box',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1240px',
+            width: '100%',
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: '1.1fr 0.9fr',
+            gap: '56px',
+            alignItems: 'center',
+          }}
+        >
+          {/* Left Column - Text */}
+          <div className="animate-in stagger-1" style={{ paddingTop: '0' }}>
+            <h1
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: 'clamp(48px, 5.5vw, 80px)',
+                fontWeight: 700,
+                lineHeight: 1.05,
+                color: '#3E2723',
+                marginBottom: '16px',
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Fancy{' '}
+              <span style={{ color: '#5D4037' }}>Nateku</span>{' '}
+              Megiri
+            </h1>
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: '19px',
+                fontWeight: 600,
+                color: '#7B5E57',
+                marginBottom: '14px',
+                letterSpacing: '0.02em',
+              }}
+            >
+              Full-Stack Developer | Software Engineer
+            </p>
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: '17px',
+                lineHeight: 1.6,
+                color: '#7B5E57',
+                maxWidth: '540px',
+                marginBottom: '24px',
+              }}
+            >
+              Turning complex problems into software you can rely on.
+            </p>
+            
+            {/* Action Buttons */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px' }}>
+              <Link
+                to="/projects"
+                id="hero-explore-btn"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '12px 28px',
+                  backgroundColor: '#5D4037',
+                  color: '#fff',
+                  borderRadius: '10px',
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  transition: 'all 300ms ease',
+                  boxShadow: '0 4px 14px rgba(93,64,55,0.25)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(93,64,55,0.35)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 14px rgba(93,64,55,0.25)';
+                }}
+              >
+                Explore Projects
+              </Link>
+              <a
+                href="https://github.com/Fancy-nateku"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="hero-github-btn"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '12px 24px',
+                  backgroundColor: 'transparent',
+                  color: '#5D4037',
+                  border: '2px solid #5D4037',
+                  borderRadius: '10px',
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  transition: 'all 300ms ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(93,64,55,0.08)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <Github size={18} />
+                GitHub
+              </a>
+              <a
+                href="#"
+                id="hero-resume-btn"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '12px 24px',
+                  backgroundColor: 'transparent',
+                  color: '#5D4037',
+                  border: '2px solid #5D4037',
+                  borderRadius: '10px',
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  transition: 'all 300ms ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(93,64,55,0.08)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <Download size={18} />
+                Resume
+              </a>
             </div>
+          </div>
 
-            {/* Right Column - Photo */}
-            <div className="flex justify-center animate-in stagger-2">
-              <div className="relative group">
-                <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-eggplant to-coffee-light opacity-25 blur transition duration-500 group-hover:opacity-40" />
-                <div className="relative h-72 w-72 overflow-hidden rounded-full border-4 border-sand shadow-2xl md:h-80 md:w-80">
-                  <img
-                    src={developerPhoto}
-                    alt="Fancy Nateku Megiri"
-                    className="h-full w-full object-cover object-top grayscale transition duration-500 hover:grayscale-0"
-                  />
-                </div>
-              </div>
+          {/* Right Column - Photo */}
+          <div
+            className="animate-in stagger-2"
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              paddingTop: '16px', /* slight downward offset for asymmetry */
+            }}
+          >
+            <div style={{ position: 'relative' }}>
+              {/* Soft radial glow behind image */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '110%',
+                  height: '110%',
+                  borderRadius: '32px',
+                  background: 'radial-gradient(ellipse at center, rgba(93,64,55,0.12) 0%, transparent 70%)',
+                  filter: 'blur(20px)',
+                  zIndex: 0,
+                }}
+              />
+              {/* Portrait image */}
+              <img
+                src={developerPhoto}
+                alt="Fancy Nateku Megiri"
+                id="hero-portrait"
+                style={{
+                  position: 'relative',
+                  zIndex: 1,
+                  width: '380px',
+                  maxHeight: 'calc(100vh - 200px)',
+                  aspectRatio: '3 / 4',
+                  objectFit: 'cover',
+                  objectPosition: 'top',
+                  borderRadius: '28px',
+                  boxShadow: '0 25px 50px rgba(0,0,0,0.15)',
+                  transition: 'transform 400ms ease, box-shadow 400ms ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.03)';
+                  e.currentTarget.style.boxShadow = '0 30px 60px rgba(0,0,0,0.2)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.boxShadow = '0 25px 50px rgba(0,0,0,0.15)';
+                }}
+              />
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Featured Projects Section */}
       <section className="py-24" style={{ backgroundColor: 'rgba(214,198,185,0.4)' }}>

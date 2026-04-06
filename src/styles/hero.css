@@ -1,0 +1,33 @@
+/* Hero Section Responsive Overrides */
+
+@media (max-width: 768px) {
+  #hero {
+    height: auto !important;
+    min-height: calc(100vh - 64px) !important;
+    padding: 40px 24px !important;
+  }
+
+  #hero > div {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  #hero h1 {
+    font-size: clamp(36px, 10vw, 48px) !important;
+  }
+
+  #hero-portrait {
+    width: 280px !important;
+    max-height: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero {
+    padding: 32px 20px !important;
+  }
+
+  #hero-portrait {
+    width: 240px !important;
+  }
+}
