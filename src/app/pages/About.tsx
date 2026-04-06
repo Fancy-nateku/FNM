@@ -1,59 +1,6 @@
-import { SkillBadge } from "../components/SkillBadge";
-import { GraduationCap, Layout, Server, Database, Wrench } from "lucide-react";
+import { technicalSkills } from "../../data/skills";
 
 const developerPhoto = "/IMG-20260331-WA0079.jpg";
-
-type Skill = {
-  name: string;
-  level: 'primary' | 'secondary';
-  label?: string;
-};
-
-type SkillCategory = {
-  title: string;
-  icon: React.ElementType;
-  skills: Skill[];
-};
-
-const skillCategories: SkillCategory[] = [
-  {
-    title: "Frontend",
-    icon: Layout,
-    skills: [
-      { name: "React", level: "primary", label: "Core" },
-      { name: "TypeScript", level: "primary" },
-      { name: "JavaScript", level: "primary" },
-      { name: "Bootstrap", level: "secondary" },
-      { name: "HTML", level: "secondary" },
-      { name: "CSS", level: "secondary" },
-    ]
-  },
-  {
-    title: "Backend",
-    icon: Server,
-    skills: [
-      { name: "Node.js", level: "primary", label: "Expert" },
-      { name: "Express.js", level: "primary" },
-    ]
-  },
-  {
-    title: "Database",
-    icon: Database,
-    skills: [
-      { name: "MySQL", level: "primary", label: "Relational" },
-    ]
-  },
-  {
-    title: "Tools",
-    icon: Wrench,
-    skills: [
-      { name: "Git", level: "primary" },
-      { name: "GitHub", level: "primary" },
-      { name: "Postman", level: "secondary" },
-      { name: "VS Code", level: "secondary" },
-    ]
-  }
-];
 
 export function About() {
   return (
@@ -88,44 +35,38 @@ export function About() {
             </p>
           </div>
         </div>
+      </div>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Skills Section */}
         <section className="mb-24 animate-in stagger-3">
-          <h2 className="text-3xl font-bold text-foreground mb-12">Technical Skills</h2>
-          <div className="grid gap-8 md:grid-cols-2 items-stretch">
-            {skillCategories.map((category) => (
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center md:text-left">Technologies and Tools</h2>
+          <div className="grid gap-8 grid-cols-1 md:grid-cols-3 items-stretch">
+            {technicalSkills.map((category) => (
               <div 
-                key={category.title} 
-                className="flex flex-col p-8 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/60 shadow-sm"
+                key={category.category} 
+                className="flex flex-col p-8 bg-sand/30 backdrop-blur-sm rounded-2xl border border-coffee-light/30 shadow-sm"
               >
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="p-3 bg-[#A67B5B]/10 rounded-xl">
-                    <category.icon className="w-6 h-6 text-[#A67B5B]" />
-                  </div>
-                  <h3 
-                    className="text-[20px] md:text-[22px] font-bold text-[#A67B5B] tracking-tight"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
-                  >
-                    {category.title}
-                  </h3>
-                </div>
+                <h3 
+                  className="mb-8 text-sm font-bold tracking-[0.2em] text-coffee-dark uppercase"
+                  style={{ fontFamily: "'Inter', sans-serif" }}
+                >
+                  {category.category}
+                </h3>
                 
-                <div className="flex flex-wrap gap-4">
-                  {category.skills.map((skill) => (
-                    <SkillBadge 
-                      key={skill.name} 
-                      name={skill.name} 
-                      level={skill.level} 
-                      label={skill.label}
-                    />
+                <div className="space-y-4">
+                  {category.items.map((item) => (
+                    <div key={item.name} className="text-base leading-relaxed text-muted-foreground">
+                      <span className="font-semibold text-foreground">{item.name}</span>
+                      <span className="mx-2 text-coffee-light">{'\u2192'}</span>
+                      <span className="font-normal">{item.desc}</span>
+                    </div>
                   ))}
                 </div>
               </div>
             ))}
           </div>
         </section>
-
-
       </div>
     </div>
   );
