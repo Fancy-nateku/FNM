@@ -8,7 +8,7 @@ export function Projects() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8 md:mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h1 className="mb-4">
             Projects
           </h1>
           <p className="text-lg max-w-3xl mx-auto text-muted-foreground">
@@ -18,7 +18,7 @@ export function Projects() {
 
         {/* Featured Projects */}
         <div className="mb-12 md:mb-24">
-          <h2 className="text-2xl font-bold text-foreground mb-8">Featured Deployments</h2>
+          <h2>Featured Deployments</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {featuredProjects.map((project: Project) => (
               <ProjectCard key={project.title} {...project} size="large" />
@@ -28,7 +28,7 @@ export function Projects() {
 
         {/* Additional Projects */}
         <div>
-          <h2 className="text-2xl font-bold text-foreground mb-8">Structural Interfaces</h2>
+          <h2>Structural Interfaces</h2>
           <div className="grid md:grid-cols-2 gap-4 md:gap-8">
             {additionalProjects.map((project: Project) => (
               <ProjectCard key={project.title} {...project} size="small" />

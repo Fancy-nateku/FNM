@@ -199,7 +199,7 @@ export function Contact() {
       <div className="mx-auto max-w-6xl w-full px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8 md:mb-16 text-center">
-          <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+          <h1 className="mb-4">
             Inquiry &amp; Collaboration
           </h1>
           <p className="mx-auto max-w-2xl text-lg opacity-85">

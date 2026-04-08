@@ -23,7 +23,7 @@ export function About() {
 
           {/* Basic Info */}
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2 tracking-tight">
+            <h1 className="mb-4">
               Fancy Nateku Megiri
             </h1>
             <p className="text-xl font-medium text-coffee-dark mb-3">
@@ -40,7 +40,7 @@ export function About() {
         {/* Background Section */}
         <section className="mb-6 md:mb-10 flex flex-col items-start">
           <div className="w-full max-w-3xl">
-            <h2 className="text-3xl font-bold text-foreground mb-4 text-left">Background</h2>
+            <h2 className="mb-4 text-left">Background</h2>
             <div className="space-y-2 text-lg leading-[1.7] text-muted-foreground text-left">
               <p>
                 Seeing farmers in my family struggle to track expenses and daily farm activities pushed me to build AgriTrack, a system that records expenses and tracks farm work. It is used by my family and a small group of early users, with expense tracking being the feature they depend on most.
@@ -60,7 +60,7 @@ export function About() {
 
         {/* Skills Section */}
         <section className="mb-8 md:mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-6 text-left">Technologies and Tools</h2>
+          <h2 className="mb-6 text-left">Technologies and Tools</h2>
           <div className="grid gap-4 grid-cols-1 md:grid-cols-3 items-stretch">
             {technicalSkills.map((category) => (
               <div 
