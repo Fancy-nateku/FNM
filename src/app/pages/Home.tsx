@@ -166,22 +166,16 @@ export function Home() {
               paddingTop: '16px', /* slight downward offset for asymmetry */
             }}
           >
-            <div style={{ position: 'relative' }}>
+            <div className="relative">
               {/* Portrait image */}
               <img
                 src={developerPhoto}
                 alt="Fancy Nateku Megiri"
                 id="hero-portrait"
-                className="w-full max-w-[300px] sm:max-w-[340px] md:max-w-[380px]"
+                className="w-full max-w-[320px] sm:max-w-[360px] md:max-w-[420px] rounded-[32px] shadow-2xl object-cover object-top h-auto md:aspect-[3/4]"
                 style={{
                   position: 'relative',
                   zIndex: 1,
-                  maxHeight: 'calc(100vh - 200px)',
-                  aspectRatio: '3 / 4',
-                  objectFit: 'cover',
-                  objectPosition: 'top',
-                  borderRadius: '28px',
-                  boxShadow: '0 25px 50px rgba(0,0,0,0.15)',
                 }}
               />
             </div>
