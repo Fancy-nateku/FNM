@@ -23,43 +23,13 @@ export function Home() {
         <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center justify-center gap-10 md:grid md:grid-cols-[1.1fr_0.9fr] md:gap-[56px]">
           {/* Left Column - Text */}
           <div className="flex flex-col items-center text-center md:block md:text-left" style={{ paddingTop: '0' }}>
-            <h1
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: 'clamp(48px, 5.5vw, 80px)',
-                fontWeight: 700,
-                lineHeight: 1.05,
-                color: '#3E2723',
-                marginBottom: '16px',
-                letterSpacing: '-0.02em',
-              }}
-            >
-              Fancy{' '}
-              <span style={{ color: '#5D4037' }}>Nateku</span>{' '}
-              Megiri
+            <h1>
+              Fancy <span style={{ color: '#5D4037' }}>Nateku</span> Megiri
             </h1>
-            <p
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: '19px',
-                fontWeight: 600,
-                color: '#7B5E57',
-                marginBottom: '14px',
-                letterSpacing: '0.02em',
-              }}
-            >
+            <p className="text-xl font-bold mb-4">
               Full-Stack Developer | Software Engineer
             </p>
-            <p
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: '17px',
-                lineHeight: 1.6,
-                color: '#7B5E57',
-                maxWidth: '540px',
-                marginBottom: '24px',
-              }}
-            >
+            <p className="text-lg mb-6 max-w-lg">
               Turning complex problems into software you can rely on.
             </p>
             
@@ -68,28 +38,7 @@ export function Home() {
               <Link
                 to="/projects"
                 id="hero-explore-btn"
-                className="w-full md:w-auto flex justify-center items-center"
-                style={{
-                  gap: '8px',
-                  padding: '12px 28px',
-                  backgroundColor: '#5D4037',
-                  color: '#fff',
-                  borderRadius: '10px',
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: '15px',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                  transition: 'all 300ms ease',
-                  boxShadow: '0 4px 14px rgba(93,64,55,0.25)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(93,64,55,0.35)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 14px rgba(93,64,55,0.25)';
-                }}
+                className="w-full md:w-auto flex justify-center items-center px-7 py-3 bg-[#5D4037] text-white rounded-lg font-bold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg shadow-md"
               >
                 Explore Projects
               </Link>
@@ -99,28 +48,7 @@ export function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   id="hero-github-btn"
-                  className="flex-1 md:flex-initial flex justify-center items-center"
-                  style={{
-                    gap: '8px',
-                    padding: '12px 24px',
-                    backgroundColor: 'transparent',
-                    color: '#5D4037',
-                    border: '2px solid #5D4037',
-                    borderRadius: '10px',
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: '15px',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    transition: 'all 300ms ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(93,64,55,0.08)';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
+                  className="flex-1 md:flex-initial flex justify-center items-center gap-2 px-6 py-3 border-2 border-[#5D4037] text-[#5D4037] rounded-lg font-bold transition-all duration-300 hover:bg-[#5D4037]/10 hover:-translate-y-0.5"
                 >
                   <Github size={18} />
                   GitHub
@@ -128,28 +56,7 @@ export function Home() {
                 <a
                   href="#"
                   id="hero-resume-btn"
-                  className="flex-1 md:flex-initial flex justify-center items-center"
-                  style={{
-                    gap: '8px',
-                    padding: '12px 24px',
-                    backgroundColor: 'transparent',
-                    color: '#5D4037',
-                    border: '2px solid #5D4037',
-                    borderRadius: '10px',
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: '15px',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    transition: 'all 300ms ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(93,64,55,0.08)';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
+                  className="flex-1 md:flex-initial flex justify-center items-center gap-2 px-6 py-3 border-2 border-[#5D4037] text-[#5D4037] rounded-lg font-bold transition-all duration-300 hover:bg-[#5D4037]/10 hover:-translate-y-0.5"
                 >
                   <Download size={18} />
                   Resume
@@ -172,7 +79,7 @@ export function Home() {
                 src={developerPhoto}
                 alt="Fancy Nateku Megiri"
                 id="hero-portrait"
-                className="w-full max-w-[320px] sm:max-w-[360px] md:max-w-[420px] rounded-[32px] shadow-2xl object-cover object-top h-auto md:aspect-[3/4]"
+                className="w-auto h-auto max-h-[320px] sm:max-h-[380px] md:h-auto md:w-full md:max-w-[420px] rounded-[32px] shadow-2xl object-cover object-top mx-auto aspect-[3/4]"
                 style={{
                   position: 'relative',
                   zIndex: 1,
@@ -188,7 +95,7 @@ export function Home() {
       <section className="py-12 md:py-24" style={{ backgroundColor: 'rgba(214,198,185,0.4)' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 md:mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold">Featured Architecture</h2>
+            <h2>Featured Architecture</h2>
             <p className="mx-auto max-w-2xl text-lg text-eggplant/70">
               A selection of high-impact systems designed to solve complex financial and organizational challenges.
             </p>
@@ -208,7 +115,7 @@ export function Home() {
       <section className="py-12 md:py-32 bg-[#EDEAE0]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 md:mb-20 text-center">
-            <h2 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
+            <h2>
               Technologies and Tools
             </h2>
           </div>
@@ -218,10 +125,7 @@ export function Home() {
                 key={category.category} 
                 className={`flex flex-col p-8 bg-sand/30 rounded-2xl border border-coffee-light/30 shadow-sm`}
               >
-                <h3 
-                  className="mb-8 text-sm font-bold tracking-[0.2em] text-foreground uppercase"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
-                >
+                <h3 className="mb-8 text-sm font-bold tracking-[0.2em] text-foreground uppercase">
                   {category.category}
                 </h3>
                 
@@ -244,7 +148,7 @@ export function Home() {
       <section className="relative overflow-hidden py-12 md:py-24">
         <div className="absolute inset-0 bg-coffee/10 opacity-60" />
         <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="mb-6 text-4xl font-bold">
+          <h2>
             Ready to Build Your Next System?
           </h2>
           <p className="mb-10 text-xl text-eggplant/70">
