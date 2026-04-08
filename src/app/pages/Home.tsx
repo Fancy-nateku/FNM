@@ -18,29 +18,14 @@ export function Home() {
       {/* Hero Section */}
       <section
         id="hero"
+        className="flex items-center bg-[#F3EFEA] px-6 py-8 md:px-[64px] md:py-[48px]"
         style={{
-          background: '#F3EFEA',
-          height: 'calc(100vh - 64px)',
-          display: 'flex',
-          alignItems: 'center',
-          overflow: 'hidden',
-          padding: '48px 64px',
-          boxSizing: 'border-box',
+          minHeight: 'calc(100vh - 64px)',
         }}
       >
-        <div
-          style={{
-            maxWidth: '1240px',
-            width: '100%',
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: '1.1fr 0.9fr',
-            gap: '56px',
-            alignItems: 'center',
-          }}
-        >
+        <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center justify-center gap-10 md:grid md:grid-cols-[1.1fr_0.9fr] md:gap-[56px]">
           {/* Left Column - Text */}
-          <div className="animate-in stagger-1" style={{ paddingTop: '0' }}>
+          <div className="flex flex-col items-center text-center md:block md:text-left" style={{ paddingTop: '0' }}>
             <h1
               style={{
                 fontFamily: "'Playfair Display', serif",
@@ -82,13 +67,12 @@ export function Home() {
             </p>
             
             {/* Action Buttons */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px' }}>
+            <div className="flex flex-col md:flex-row gap-[14px] w-full max-w-[400px] mx-auto md:mx-0 md:max-w-none md:flex-wrap md:justify-start">
               <Link
                 to="/projects"
                 id="hero-explore-btn"
+                className="w-full md:w-auto flex justify-center items-center"
                 style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
                   gap: '8px',
                   padding: '12px 28px',
                   backgroundColor: '#5D4037',
@@ -112,74 +96,73 @@ export function Home() {
               >
                 Explore Projects
               </Link>
-              <a
-                href="https://github.com/Fancy-nateku"
-                target="_blank"
-                rel="noopener noreferrer"
-                id="hero-github-btn"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '12px 24px',
-                  backgroundColor: 'transparent',
-                  color: '#5D4037',
-                  border: '2px solid #5D4037',
-                  borderRadius: '10px',
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: '15px',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                  transition: 'all 300ms ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(93,64,55,0.08)';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <Github size={18} />
-                GitHub
-              </a>
-              <a
-                href="#"
-                id="hero-resume-btn"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '12px 24px',
-                  backgroundColor: 'transparent',
-                  color: '#5D4037',
-                  border: '2px solid #5D4037',
-                  borderRadius: '10px',
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: '15px',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                  transition: 'all 300ms ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(93,64,55,0.08)';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <Download size={18} />
-                Resume
-              </a>
+              <div className="flex gap-[14px] w-full md:w-auto">
+                <a
+                  href="https://github.com/Fancy-nateku"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="hero-github-btn"
+                  className="flex-1 md:flex-initial flex justify-center items-center"
+                  style={{
+                    gap: '8px',
+                    padding: '12px 24px',
+                    backgroundColor: 'transparent',
+                    color: '#5D4037',
+                    border: '2px solid #5D4037',
+                    borderRadius: '10px',
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    transition: 'all 300ms ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(93,64,55,0.08)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <Github size={18} />
+                  GitHub
+                </a>
+                <a
+                  href="#"
+                  id="hero-resume-btn"
+                  className="flex-1 md:flex-initial flex justify-center items-center"
+                  style={{
+                    gap: '8px',
+                    padding: '12px 24px',
+                    backgroundColor: 'transparent',
+                    color: '#5D4037',
+                    border: '2px solid #5D4037',
+                    borderRadius: '10px',
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    transition: 'all 300ms ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(93,64,55,0.08)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <Download size={18} />
+                  Resume
+                </a>
+              </div>
             </div>
           </div>
 
           {/* Right Column - Photo */}
           <div
-            className="animate-in stagger-2"
             style={{
               display: 'flex',
               justifyContent: 'center',
@@ -187,45 +170,21 @@ export function Home() {
             }}
           >
             <div style={{ position: 'relative' }}>
-              {/* Soft radial glow behind image */}
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  width: '110%',
-                  height: '110%',
-                  borderRadius: '32px',
-                  background: 'radial-gradient(ellipse at center, rgba(93,64,55,0.12) 0%, transparent 70%)',
-                  filter: 'blur(20px)',
-                  zIndex: 0,
-                }}
-              />
               {/* Portrait image */}
               <img
                 src={developerPhoto}
                 alt="Fancy Nateku Megiri"
                 id="hero-portrait"
+                className="w-full max-w-[300px] sm:max-w-[340px] md:max-w-[380px]"
                 style={{
                   position: 'relative',
                   zIndex: 1,
-                  width: '380px',
                   maxHeight: 'calc(100vh - 200px)',
                   aspectRatio: '3 / 4',
                   objectFit: 'cover',
                   objectPosition: 'top',
                   borderRadius: '28px',
                   boxShadow: '0 25px 50px rgba(0,0,0,0.15)',
-                  transition: 'transform 400ms ease, box-shadow 400ms ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'scale(1.03)';
-                  e.currentTarget.style.boxShadow = '0 30px 60px rgba(0,0,0,0.2)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'scale(1)';
-                  e.currentTarget.style.boxShadow = '0 25px 50px rgba(0,0,0,0.15)';
                 }}
               />
             </div>
@@ -246,7 +205,7 @@ export function Home() {
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((project: Project, i: number) => (
-              <div key={project.title} className={`animate-in stagger-${i + 1}`}>
+              <div key={project.title}>
                 <ProjectCard {...project} size="large" />
               </div>
             ))}
@@ -266,7 +225,7 @@ export function Home() {
             {technicalSkills.map((category, i) => (
               <div 
                 key={category.category} 
-                className={`flex flex-col p-8 bg-sand/30 backdrop-blur-sm rounded-2xl border border-coffee-light/30 shadow-sm animate-in stagger-${i + 1}`}
+                className={`flex flex-col p-8 bg-sand/30 rounded-2xl border border-coffee-light/30 shadow-sm`}
               >
                 <h3 
                   className="mb-8 text-sm font-bold tracking-[0.2em] text-foreground uppercase"

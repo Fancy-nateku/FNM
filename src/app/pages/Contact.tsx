@@ -195,7 +195,7 @@ export function Contact() {
   const isFormDisabled = isSubmitting || cooldownRemaining > 0;
 
   return (
-    <div className="py-24 bg-[#F5EFE6] text-[#6F4E37] h-full flex flex-col justify-center animate-in">
+    <div className="py-24 bg-[#F5EFE6] text-[#6F4E37] min-h-screen flex flex-col justify-center">
       <div className="mx-auto max-w-6xl w-full px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 text-center">
