@@ -18,11 +18,11 @@ export function Home() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="flex items-center bg-[#F3EFEA] px-6 py-8 md:min-h-[calc(100vh-64px)] md:px-[64px] md:py-[48px]"
+        className="flex items-center bg-[#F3EFEA] px-6 py-10 min-h-[calc(100vh-56px)] md:min-h-[calc(100vh-64px)] md:px-[64px] md:py-[48px]"
       >
-        <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center justify-center gap-10 md:grid md:grid-cols-[1.1fr_0.9fr] md:gap-[56px]">
+        <div className="mx-auto flex h-full w-full max-w-[1240px] flex-col items-center justify-around gap-8 md:grid md:grid-cols-[1.1fr_0.9fr] md:gap-[56px] md:justify-center">
           {/* Left Column - Text */}
-          <div className="flex flex-col items-center text-center md:block md:text-left" style={{ paddingTop: '0' }}>
+          <div className="flex flex-col items-center text-center md:block md:text-left">
             <h1>
               Fancy <span style={{ color: '#5D4037' }}>Nateku</span> Megiri
             </h1>
@@ -66,20 +66,14 @@ export function Home() {
           </div>
 
           {/* Right Column - Photo */}
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              paddingTop: '16px', /* slight downward offset for asymmetry */
-            }}
-          >
+          <div className="flex justify-center items-center w-full mt-4 md:mt-0">
             <div className="relative">
               {/* Portrait image */}
               <img
                 src={developerPhoto}
                 alt="Fancy Nateku Megiri"
                 id="hero-portrait"
-                className="w-auto h-auto max-h-[320px] sm:max-h-[380px] md:h-auto md:w-full md:max-w-[420px] rounded-[32px] shadow-2xl object-cover object-top mx-auto aspect-[3/4]"
+                className="w-full max-w-[300px] sm:max-w-[340px] md:max-w-[380px] rounded-[32px] shadow-2xl object-cover object-top mx-auto aspect-[3/4] max-h-[45vh] md:max-h-none"
                 style={{
                   position: 'relative',
                   zIndex: 1,
