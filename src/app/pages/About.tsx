@@ -4,10 +4,10 @@ const developerPhoto = "/IMG-20260331-WA0079.jpg";
 
 export function About() {
   return (
-    <div className="py-10 bg-background min-h-screen">
+    <div className="py-6 md:py-10 bg-background">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Profile Section */}
-        <div className="flex flex-col md:flex-row gap-12 items-center mb-12">
+        <div className="flex flex-col md:flex-row gap-12 items-center mb-8 md:mb-12">
           {/* Photo */}
           <div className="flex-shrink-0">
             <div className="relative group w-48 h-48 md:w-64 md:h-64">
@@ -38,7 +38,7 @@ export function About() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Background Section */}
-        <section className="mb-10 flex flex-col items-start">
+        <section className="mb-6 md:mb-10 flex flex-col items-start">
           <div className="w-full max-w-3xl">
             <h2 className="text-3xl font-bold text-foreground mb-4 text-left">Background</h2>
             <div className="space-y-2 text-lg leading-[1.7] text-muted-foreground text-left">
@@ -59,7 +59,7 @@ export function About() {
         </section>
 
         {/* Skills Section */}
-        <section className="mb-12">
+        <section className="mb-8 md:mb-12">
           <h2 className="text-3xl font-bold text-foreground mb-6 text-left">Technologies and Tools</h2>
           <div className="grid gap-4 grid-cols-1 md:grid-cols-3 items-stretch">
             {technicalSkills.map((category) => (

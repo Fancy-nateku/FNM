@@ -38,7 +38,7 @@ export function Root() {
         }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex h-14 md:h-16 items-center justify-between">
             {/* Logo */}
             <Link 
               to="/" 
@@ -79,26 +79,32 @@ export function Root() {
         </div>
 
         {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="bg-[rgba(245,239,230,0.95)] backdrop-blur-md md:hidden border-t border-[#6F4E37]/10 shadow-lg">
-            <div className="space-y-1 px-4 py-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`block rounded-md px-3 py-3 text-base transition-colors ${
-                    isActive(item.path)
-                      ? "bg-[#6F4E37]/10 text-[#4A2C1A] font-bold"
-                      : "text-[#6F4E37] font-medium hover:bg-[#6F4E37]/5 hover:text-[#8B5A2B]"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+        <div
+          className={`grid transition-all duration-300 ease-in-out md:hidden ${
+            mobileMenuOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="bg-[rgba(245,239,230,0.95)] backdrop-blur-md border-t border-[#6F4E37]/10 shadow-lg">
+              <div className="space-y-1 px-4 py-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block rounded-md px-3 py-3 text-base transition-colors ${
+                      isActive(item.path)
+                        ? "bg-[#6F4E37]/10 text-[#4A2C1A] font-bold"
+                        : "text-[#6F4E37] font-medium hover:bg-[#6F4E37]/5 hover:text-[#8B5A2B]"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </nav>
 
       {/* Main Content */}
@@ -107,7 +113,7 @@ export function Root() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-coffee-light/50 bg-sand/30 py-8">
+      <footer className="border-t border-coffee-light/50 bg-sand/30 py-4 md:py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex flex-wrap items-center justify-center text-sm font-medium text-muted-foreground tracking-wide">
             <a href="https://github.com/Fancy-nateku" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-coffee-dark transition-colors relative top-[1px]">

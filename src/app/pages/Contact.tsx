@@ -195,10 +195,10 @@ export function Contact() {
   const isFormDisabled = isSubmitting || cooldownRemaining > 0;
 
   return (
-    <div className="py-24 bg-[#F5EFE6] text-[#6F4E37] min-h-screen flex flex-col justify-center">
+    <div className="py-12 md:py-24 bg-[#F5EFE6] text-[#6F4E37] flex flex-col justify-center">
       <div className="mx-auto max-w-6xl w-full px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-8 md:mb-16 text-center">
           <h1 className="mb-4 text-4xl font-bold md:text-5xl">
             Inquiry &amp; Collaboration
           </h1>
@@ -207,7 +207,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
           {/* Left Column: Contact Form */}
           <div className="order-1 md:order-1">
             <form onSubmit={handleSubmit} className="space-y-6" noValidate>

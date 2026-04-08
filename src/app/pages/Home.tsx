@@ -18,10 +18,7 @@ export function Home() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="flex items-center bg-[#F3EFEA] px-6 py-8 md:px-[64px] md:py-[48px]"
-        style={{
-          minHeight: 'calc(100vh - 64px)',
-        }}
+        className="flex items-center bg-[#F3EFEA] px-6 py-8 md:min-h-[calc(100vh-64px)] md:px-[64px] md:py-[48px]"
       >
         <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center justify-center gap-10 md:grid md:grid-cols-[1.1fr_0.9fr] md:gap-[56px]">
           {/* Left Column - Text */}
@@ -194,16 +191,16 @@ export function Home() {
 
 
       {/* Featured Projects Section */}
-      <section className="py-24" style={{ backgroundColor: 'rgba(214,198,185,0.4)' }}>
+      <section className="py-12 md:py-24" style={{ backgroundColor: 'rgba(214,198,185,0.4)' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
+          <div className="mb-8 md:mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold">Featured Architecture</h2>
             <p className="mx-auto max-w-2xl text-lg text-eggplant/70">
               A selection of high-impact systems designed to solve complex financial and organizational challenges.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((project: Project, i: number) => (
               <div key={project.title}>
                 <ProjectCard {...project} size="large" />
@@ -214,14 +211,14 @@ export function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-32 bg-[#EDEAE0]">
+      <section className="py-12 md:py-32 bg-[#EDEAE0]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-20 text-center">
+          <div className="mb-10 md:mb-20 text-center">
             <h2 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
               Technologies and Tools
             </h2>
           </div>
-          <div className="grid gap-8 grid-cols-1 md:grid-cols-3 items-stretch">
+          <div className="grid gap-4 md:gap-8 grid-cols-1 md:grid-cols-3 items-stretch">
             {technicalSkills.map((category, i) => (
               <div 
                 key={category.category} 
@@ -250,7 +247,7 @@ export function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden py-24">
+      <section className="relative overflow-hidden py-12 md:py-24">
         <div className="absolute inset-0 bg-coffee/10 opacity-60" />
         <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="mb-6 text-4xl font-bold">
