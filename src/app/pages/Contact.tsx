@@ -120,9 +120,9 @@ export function Contact() {
     try {
       const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
-      if (!ACCESS_KEY || ACCESS_KEY === "YOUR_ACCESS_KEY_HERE") {
-        console.error("Web3Forms Access Key is missing or invalid. Check your .env file.");
-        alert("The contact form is not configured correctly. Please check the access key.");
+      if (!ACCESS_KEY || ACCESS_KEY === "YOUR_ACCESS_KEY_HERE" || ACCESS_KEY.includes("*")) {
+        console.error("Web3Forms Access Key is invalid. Check your .env file or verify it loaded.");
+        alert("Configuration Error: The Web3Forms access key is missing or invalid. Did you restart the server after adding it to .env?");
         setIsSubmitting(false);
         return;
       }
@@ -152,18 +152,18 @@ export function Contact() {
 
       const result = await response.json();
 
-      if (result.success) {
+      if (response.ok && result.success) {
         setSubmitSuccess(true);
         setFormData({ name: "", email: "", message: "" });
         startCooldown(); // Start 60s rate limit cooldown
         setTimeout(() => setSubmitSuccess(false), 5000);
       } else {
-        console.error("Submission failed:", result);
-        alert(result.message || "Something went wrong. Please try again.");
+        console.error("Submission failed (API response):", result);
+        alert(`Failed to send API Request. Web3Forms returned: [${response.status}] ${result.message || JSON.stringify(result)}`);
       }
-    } catch (error) {
-      console.error("Form error:", error);
-      alert("Something went wrong. Please try again.");
+    } catch (error: any) {
+      console.error("Form fetch/network error:", error);
+      alert(`Network or Fetch Error: ${error?.message || String(error)}. Please check your internet connection and verify ad-blockers aren't blocking api.web3forms.com.`);
     } finally {
       setIsSubmitting(false);
     }
